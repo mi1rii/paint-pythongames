@@ -11,12 +11,14 @@ Exercises
 """Serpiente"""
 
 from turtle import *
-from random import randrange
+from random import randrange, choice
 from freegames import square, vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+food_colors = ['blue', 'yellow', 'purple', 'orange', 'pink']
+food_color = choice(food_colors) 
 
 def change(x, y):
     """Change snake direction."""
@@ -31,6 +33,7 @@ colors = ['blue', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black'
 selected_color = colors[randrange(0, len(colors))]
 
 def move():
+    global food_color
     """Move snake forward one segment."""
     head = snake[-1].copy()
     head.move(aim)
@@ -54,7 +57,7 @@ def move():
     for body in snake:
         square(body.x, body.y, 9, selected_color)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, 'food_color')
     update()
     ontimer(move, 100)
 
