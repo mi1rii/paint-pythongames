@@ -8,6 +8,8 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
+"""Serpiente"""
+
 from turtle import *
 from random import randrange
 from freegames import square, vector
