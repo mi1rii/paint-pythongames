@@ -1,15 +1,3 @@
-"""Snake, classic arcade game.
-
-Exercises
-
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to mouse clicks.
-"""
-
-"""Serpiente"""
-
 from turtle import *
 from random import randrange, choice
 from freegames import square, vector
@@ -17,8 +5,10 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+# Lista de colores para la comida, excluyendo el rojo
 food_colors = ['blue', 'yellow', 'purple', 'orange', 'pink']
-food_color = choice(food_colors) 
+current_food_color = choice(food_colors)  # Selecciona un color inicial para la comida
 
 def change(x, y):
     """Change snake direction."""
@@ -29,12 +19,9 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
-colors = ['blue', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black']
-selected_color = colors[randrange(0, len(colors))]
-
 def move():
-    global food_color
     """Move snake forward one segment."""
+    global current_food_color
     head = snake[-1].copy()
     head.move(aim)
 
@@ -50,17 +37,17 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+        current_food_color = choice(food_colors)  # Cambia el color de la comida al azar
     else:
         snake.pop(0)  
 
     clear()
     for body in snake:
-        square(body.x, body.y, 9, selected_color)
+        square(body.x, body.y, 9, 'black')
 
-    square(food.x, food.y, 9, 'food_color')
+    square(food.x, food.y, 9, current_food_color)  # Dibuja la comida con el color actual
     update()
     ontimer(move, 100)
-
 
 setup(420, 420, 370, 0)
 hideturtle()
