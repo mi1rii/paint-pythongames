@@ -38,11 +38,20 @@ def draw():
 
     for target in targets:
         goto(target.x, target.y)
-        dot(20, 'blue')
+        begin_fill()
+        color('purple') 
+        for _ in range(4): 
+            forward(20)
+            left(90)
+        end_fill()
 
     if inside(ball):
-        goto(ball.x, ball.y)
-        dot(6, 'red')
+        begin_fill()
+        color('pink') 
+        for _ in range(3): 
+            forward(10)
+            left(120)
+        end_fill()
 
     update()
 
