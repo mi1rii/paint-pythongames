@@ -68,13 +68,11 @@ def draw():
     shape(car)
     stamp()
 
-    # Dibujar los cuadrados que siguen ocultos
     for count in range(64):
         if hide[count]:
             x, y = xy(count)
             square(x, y)
 
-    # Mostrar el número de la marca actual
     mark = state['mark']
     if mark is not None and hide[mark]:
         x, y = xy(mark)
@@ -83,7 +81,6 @@ def draw():
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
-    # Verificar si todos los cuadros han sido destapados
     if all(not hidden for hidden in hide):
         up()
         goto(-100, 0)
@@ -91,7 +88,7 @@ def draw():
         write('¡Juego completado!', font=('Arial', 30, 'normal'))
     else:
         update()
-        ontimer(draw, 100)  # Seguir redibujando solo si no está completo
+        ontimer(draw, 100) 
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
