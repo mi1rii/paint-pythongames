@@ -1,14 +1,3 @@
-"""Pacman, classic arcade game.
-
-Exercises
-
-1. Change the board.
-2. Change the number of ghosts.
-3. Change where pacman starts.
-4. Make the ghosts faster/slower.
-5. Make the ghosts smarter.
-"""
-
 from random import choice
 from turtle import *
 
@@ -108,6 +97,25 @@ def world():
                 path.dot(2, 'white')
 
 
+def move_towards(target, current):
+    options = [
+        vector(5, 0),
+        vector(-5, 0),
+        vector(0, 5),
+        vector(0, -5),
+    ]
+    best_option = options[0]
+    best_distance = abs(target - (current + options[0]))
+
+    for option in options[1:]:
+        distance = abs(target - (current + option))
+        if distance < best_distance and valid(current + option):
+            best_option = option
+            best_distance = distance
+
+    return best_option
+
+
 def move():
     """Move pacman and all ghosts."""
     writer.undo()
@@ -135,15 +143,7 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
-            options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
-            ]
-            plan = choice(options)
-            course.x = plan.x
-            course.y = plan.y
+            course.x, course.y = move_towards(pacman, point)
 
         up()
         goto(point.x + 10, point.y + 10)
