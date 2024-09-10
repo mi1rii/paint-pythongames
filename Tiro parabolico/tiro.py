@@ -32,14 +32,16 @@ def draw():
         end_fill()
 
     if inside(ball):
+        goto(ball.x, ball.y)
         begin_fill()
-        color('pink') 
+        color('turquoise')
         for _ in range(3): 
             forward(10)
             left(120)
         end_fill()
 
     update()
+
 
 def move():
     """Move ball and targets."""
