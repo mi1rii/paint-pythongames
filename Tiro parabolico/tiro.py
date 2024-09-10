@@ -11,8 +11,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 200) / 10
+        speed.y = (y + 200) / 10
 
 def inside(xy):
     """Return True if xy within screen."""
@@ -32,14 +32,16 @@ def draw():
         end_fill()
 
     if inside(ball):
+        goto(ball.x, ball.y)
         begin_fill()
-        color('pink') 
+        color('turquoise')
         for _ in range(3): 
             forward(10)
             left(120)
         end_fill()
 
     update()
+
 
 def move():
     """Move ball and targets."""
@@ -49,7 +51,7 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 2
 
     if inside(ball):
         speed.y -= 0.35
