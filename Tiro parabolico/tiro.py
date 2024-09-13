@@ -1,18 +1,3 @@
-"""
-Memory Game
-
-This script implements a simple memory game using the Turtle graphics library. The game involves a ball and targets that move across the screen. The player can interact with the game by tapping on the screen, which affects the ball's movement.
-
-Dependencies:
-- random: for generating random positions for targets.
-- turtle: for drawing and handling user interactions.
-- freegames.vector: for vector operations used in ball and target movements.
-
-The main components of the game include:
-- Ball: The player's object that moves according to user input.
-- Targets: Moving objects that the player should avoid or interact with.
-"""
-
 from random import randrange
 from turtle import *
 from freegames import vector
