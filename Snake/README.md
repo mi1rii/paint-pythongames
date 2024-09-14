@@ -30,4 +30,4 @@ Instrucciones de instalación
 
 	1.	Clona o descarga este repositorio.
 	2.	Instala los requisitos necesarios usando el siguiente comando: pip install freegames
-	3.	Ejecuta el archivo del juego con el siguiente comando: python nombre_del_archivo.py
+	3.	Ejecuta el archivo del juego con el siguiente comando: python snake.py
