@@ -1,3 +1,5 @@
+PAINT 🖌️🖍️
+
 Este es un sencillo juego de dibujo hecho en Python utilizando la biblioteca turtle. Permite a los jugadores dibujar varias formas geométricas en la pantalla con solo hacer clic y usar teclas del teclado. Las formas disponibles incluyen líneas, cuadrados, círculos, rectángulos y triángulos. También puedes cambiar el color del dibujo.
 
 Funcionalidades
