@@ -1,4 +1,4 @@
-Snake 🐍
+SNAKE 🐍
 
 Descripción:
 
