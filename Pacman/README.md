@@ -12,12 +12,12 @@ Funcionalidades:
 
 	1.	Ejecuta el archivo Python.
 	2.	Utiliza las teclas de flecha para mover a Pac-Man:
-	•	Flecha derecha: mover a la derecha
-	•	Flecha izquierda: mover a la izquierda
-	•	Flecha arriba: mover hacia arriba
-	•	Flecha abajo: mover hacia abajo
-	3.	Intenta comer todos los puntos blancos del laberinto mientras evitas a los fantasmas.
-	4.	Si Pac-Man colisiona con un fantasma, el juego termina.
+	3.      Flecha derecha: mover a la derecha
+	4.      Flecha izquierda: mover a la izquierda
+	5.      Flecha arriba: mover hacia arriba
+	6.      Flecha abajo: mover hacia abajo
+	7.	Intenta comer todos los puntos blancos del laberinto mientras evitas a los fantasmas.
+	8.	Si Pac-Man colisiona con un fantasma, el juego termina.
 
 Requisitos:
 
