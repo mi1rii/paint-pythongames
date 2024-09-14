@@ -1,7 +1,5 @@
 SNAKE 🐍
 
-Descripción:
-
 Este es un clásico juego de serpiente implementado en Python utilizando la biblioteca turtle. El objetivo del juego es controlar una serpiente para que coma la comida que aparece aleatoriamente en la pantalla, haciendo que la serpiente crezca. El juego termina cuando la serpiente choca contra los límites de la pantalla o contra sí misma.
 
 Funcionalidades:
